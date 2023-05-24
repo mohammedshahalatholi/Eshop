@@ -1,0 +1,47 @@
+
+
+{% extends 'index.html'%}
+
+{% block body %}
+    
+
+        
+
+                        
+                           
+                       
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Image URL</th>
+                                <th scope="col"><a href="/add" type="button" class="btn btn-primary">Add Product</a></th>
+                                <th scope="col"><a href="/shops" type="button" class="btn btn-primary">View shops</a></th>
+                                <th scope="col"><a href="/adminpage" type="button" class="btn btn-primary">Edit shop</a></th>
+                          
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% for i in val %}
+                              <tr>
+                                <form action="{{url_for('updateproduct',id=i[0])}}" method="post"  name="form" id="form"> 
+                                <td>{{i[0]}}</td>
+                                <td><input type="text" class="form-control" name="name"  value="{{i[1]}}" ></td>
+                                <td><input type="text" class="form-control" name="price"  value="{{i[2]}}" ></td>
+                                <td><input type="text" class="form-control" name="image"  value="{{i[3]}}" ></td>
+                               <td> <img src="{{i[3]}}" class="img-rounded" alt="Cinque Terre" width="100" height="75"> </td>
+                               <td><input type="submit"  class="btn btn-success" value="Update"></td>
+                               <td> <a href="{{url_for('deleteproduct',id=i[0])}}" type="button" class="btn btn-danger">Delete</a></td>
+                              </tr>
+                            </form>
+                            
+                            {% endfor %}
+                            </tbody>
+                          </table>
+
+{% endblock %}
+
+
+

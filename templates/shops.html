@@ -1,0 +1,26 @@
+{% extends 'index.html'%}
+{% block body %}
+<div class="container">
+  <div class="row">
+    {% for i in VAL %}
+    <div class="col-sm-4">
+        
+       <p>shpo page Shope id {{i[0]}} </P>
+        <div class="card" style="width: 18rem;">
+          <img src="{{i[3]}}" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+            <div class="card-body">
+              <h5 class="card-title">{{i[1]}}</h5>
+              <p class="card-text">{{i[2]}}</p>
+              <a href="{{url_for('productview',sid=i[0])}}" class="btn btn-primary">Select Shop</a>
+            </div>
+          </div>
+          
+        
+    </div>
+   
+    {% endfor %}
+    
+  </div>
+</div>
+
+{% endblock %}

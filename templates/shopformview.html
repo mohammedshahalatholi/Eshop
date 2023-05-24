@@ -1,0 +1,32 @@
+
+{% extends 'index.html'%}
+
+{% block body %}
+       
+                           
+                        <form action="/addshop" method="post" enctype="multipart/form-data" name="form" id="form">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Shop Name</th>
+                                <th scope="col"><input type="text" class="form-control" name="sname" ></th>
+                              </tr>
+                              
+                              <tr>
+                                <th scope="col">place</th>
+                                <th scope="col"><input type="text" class="form-control" name="splace" ></th>
+                              </tr>
+                              <tr>
+                                <th scope="col">Image URL</th>
+                                <th scope="col"><input type="text" class="form-control" name="simage"></th>
+                              </tr>
+                              
+                              
+                            </thead>
+                            
+                          </table>
+                          <tr>
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                          </tr>
+                  </form>
+{% endblock %}

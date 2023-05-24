@@ -1,0 +1,36 @@
+
+{% extends 'index.html'%}
+
+{% block body %}
+    
+
+        
+
+                        
+                           
+                        <form action="/addproduct" method="post" enctype="multipart/form-data" name="form" id="form">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col"><input type="text" class="form-control" name="fname" ></th>
+                              </tr>
+                              
+                              <tr>
+                                <th scope="col">Price</th>
+                                <th scope="col"><input type="text" class="form-control" name="price" ></th>
+                              </tr>
+                              
+                              <tr>
+                                <th scope="col">Image URL</th>
+                                <th scope="col"><input type="text" class="form-control" name="image"></th>
+                              </tr>
+                              
+                            </thead>
+                            
+                          </table>
+                          <tr>
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                          </tr>
+                  </form>
+{% endblock %}
